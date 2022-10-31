@@ -1,0 +1,23 @@
+<beans default-autowire="byName" xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!--方式一： 构造方法实例化Bean-->
+        <bean id="bookDao"
+                class="com.haixiaolu.spring_03_bean_instance.dao.impl.BookDaoImpl"/>
+
+        <!--方式二： 使用静态工厂实例化bean方法-->
+        <bean id="OrderDao"
+              class="com.haixiaolu.spring_03_bean_instance.factory.OrderDaoFactory" factory-method="getOrderDao"/>
+
+
+<!--        方式三： 使用实例工厂实例化bean-->
+<!--        <bean id = "UserFactory" class = "com.haixiaolu.spring_03_bean_instance.factory.UserDaoFactory" />-->
+<!--        <bean id = "UserDao" factory-method="getUserDao" factory-bean="UserFactory"/>-->
+
+
+<!--        方式三： 使用factoryBean实例化bean-->
+        <bean id = "UserDao" class = "com.haixiaolu.spring_03_bean_instance.factory.UserDaoFactoryBean"></bean>
+</beans>
+
+
