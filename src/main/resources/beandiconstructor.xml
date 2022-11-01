@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--标准书写-->
+
+<!--    <bean id = "bookDao" class = "com.haixiaolu.spring_06_di_constructor.dao.impl.BookImpl">-->
+<!--            <constructor-arg name="connectionNum" value="10"/>-->
+<!--            <constructor-arg name = "database" value="mysql"/>-->
+<!--    </bean>-->
+
+<!--    <bean id = "userDao" class = "com.haixiaolu.spring_06_di_constructor.dao.impl.UserImpl"/>-->
+
+<!--    <bean id = "bookService" class="com.haixiaolu.spring_06_di_constructor.service.impl.BookServiceImpl">-->
+<!--        <constructor-arg name="bookDao" ref="bookDao"/> &lt;!&ndash; name 是形参的名&ndash;&gt;-->
+<!--        <constructor-arg name = "userDao" ref="userDao" />-->
+<!--    </bean>-->
+
+<!--    第二种方式: 把Constructor name 改成type， 如果以后该参数名的时候， 只要类型是一样的， 这里不用重新配置 -->
+        <!-- 耦合度不是太高, 解决了形参名的问题-->
+<!--        <bean id = "bookDao" class = "com.haixiaolu.spring_06_di_constructor.dao.impl.BookImpl">-->
+<!--                <constructor-arg type="int" value="10"/>-->
+<!--                <constructor-arg  type="java.lang.String" value = "mysql"/>-->
+<!--        </bean>-->
+
+<!--        <bean id = "userDao" class = "com.haixiaolu.spring_06_di_constructor.dao.impl.UserImpl"/>-->
+
+<!--        <bean id = "bookService" class="com.haixiaolu.spring_06_di_constructor.service.impl.BookServiceImpl">-->
+<!--            <constructor-arg name="bookDao" ref="bookDao"/> &lt;!&ndash; name 是形参的名&ndash;&gt;-->
+<!--            <constructor-arg name = "userDao" ref="userDao" />-->
+<!--        </bean>-->
+
+    <bean id = "bookDao" class = "com.haixiaolu.spring_06_di_constructor.dao.impl.BookImpl">
+        <constructor-arg type="int" value="10"/>
+        <constructor-arg  type="java.lang.String" value = "mysql"/>
+    </bean>
+
+    <bean id = "userDao" class = "com.haixiaolu.spring_06_di_constructor.dao.impl.UserImpl"/>
+
+    <bean id = "bookService" class="com.haixiaolu.spring_06_di_constructor.service.impl.BookServiceImpl">
+        <constructor-arg name="bookDao" ref="bookDao"/> <!-- name 是形参的名-->
+        <constructor-arg name = "userDao" ref="userDao" />
+    </bean>
+
+</beans>

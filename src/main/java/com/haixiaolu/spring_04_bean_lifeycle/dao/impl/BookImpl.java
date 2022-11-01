@@ -4,7 +4,6 @@ import com.haixiaolu.spring_03_bean_instance.dao.BookDao;
 
 public class BookImpl implements BookDao {
 
-
     @Override
     public void save() {
         System.out.println("book dao save ...");
