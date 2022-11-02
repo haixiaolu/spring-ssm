@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "bookDao" class = "com.haixiaolu.spring_08_di_collection.dao.impl.BookDaoImpl">
+            <property name = "array">
+                <array>
+                    <value>100</value>
+                    <value>200</value>
+                    <value>300</value>
+                </array>
+            </property>
+
+        <property name = "list">
+            <list>
+                <value>youtube</value>
+                <value>Hulu</value>
+                <value>NetFlex</value>
+            </list>
+        </property>
+
+        <property name = "set">
+            <set>
+                <value>google</value>
+                <value>baidu</value>
+                <value>yahoo</value>
+                <value>yahoo</value>
+            </set>
+        </property>
+
+        <property name = "map">
+            <map>
+                <entry key = "country" value = "China"/>
+                <entry key = "province" value = "jiangsu"/>
+                <entry key = "city" value = "yiwu"/>
+            </map>
+        </property>
+        
+        <property name="properties">
+            <props>
+                <prop key="country">USA</prop>
+                <prop key="State">Oklahoma</prop>
+            </props>
+        </property>
+
+
+    </bean>
+
+</beans>
