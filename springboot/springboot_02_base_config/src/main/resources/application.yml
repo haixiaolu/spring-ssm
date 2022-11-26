@@ -1,0 +1,12 @@
+lesson: SpringBoot
+server:
+  port: 82
+
+enterprise:
+  name: itcast
+  age: 16
+  tel: 405333232
+  subject:
+    - java
+    - frontend
+    - bigData
